@@ -168,77 +168,77 @@
           </th>
         </tr>
         <!-- 샘플 데이터 -->
-        <tr>
+        <tr id="1">
           <td style="text-align: center;">1</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
         </tr>
-        <tr>
+        <tr id="2">
           <td style="text-align: center;">2</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
         </tr>
-        <tr>
+        <tr id="3">
           <td style="text-align: center;">3</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
         </tr>
-        <tr>
+        <tr id="4">
           <td style="text-align: center;">4</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
         </tr>
-        <tr>
+        <tr id="5">
           <td style="text-align: center;">5</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
         </tr>
-        <tr>
+        <tr id="6">
           <td style="text-align: center;">6</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
         </tr>
-        <tr>
+        <tr id="7">
           <td style="text-align: center;">7</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
         </tr>
-        <tr>
+        <tr id="8">
           <td style="text-align: center;">8</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
         </tr>
-        <tr>
+        <tr id="9">
           <td style="text-align: center;">9</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
         </tr>
-        <tr>
+        <tr id="10">
           <td style="text-align: center;">10</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
         </tr>
-        <tr>
+        <tr id="11">
           <td style="text-align: center;">11</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
           <td>12,000</td>
@@ -271,14 +271,16 @@
 
     $(document).on("click", "#addBtn", function () {
       var addTrText =
-      '<tr>'+
+      '<tr id = "'+ id + '">'+
         '<td style="text-align: center;"><i class="fa fa-trash fa-border"></i></td>'+
         '<td><input type="text" placeholder="새로 추가된 아이템" style="width:100%;"></input></td>'+
         '<td><input type="text"></input></td><td><input type="text"></input></td><td><input type="text"></input></td></tr>';
       $("#supTab > tbody:last").append(addTrText);
 
       id++;
-    });W
+    });
+
+
   </script>
 </body>
 
