@@ -116,6 +116,16 @@
   .popover-body {
     color: white;
   }
+
+  /* fixed footer */
+  .footer {
+    position:sticky;
+    bottom:0;
+    border-top: 3px solid #d4d4d4;
+    background-color: #f1f1f1;
+    text-align: right;
+    padding: 10px 20px 10px 20px;
+  }
 </style>
 
 <body>
@@ -142,7 +152,6 @@
           </form>
         </div>
       </div>
-  </div>
   </div>
 
   <div id="section">
@@ -249,6 +258,12 @@
     </div>
   </div>
 
+  <div class="footer">
+    <button type="button" class="btn btn-outline-primary">cancle</button>&nbsp;
+    <button type="button" class="btn btn-outline-primary">submit</button>&nbsp;
+    <button type="button" class="btn btn-outline-primary">edit</button>&nbsp;
+    <button type="button" class="btn btn-outline-primary">save</button>
+  </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -271,17 +286,19 @@
 
     $(document).on("click", "#addBtn", function () {
       var addTrText =
-      '<tr id = "'+ id + '">'+
-        '<td style="text-align: center;"><i id="delete" class="fa fa-trash fa-border"></i></td>'+
-        '<td><input type="text" placeholder="새로 추가된 아이템" style="width:100%;"></input></td>'+
-        '<td><input type="text"></input></td><td><input type="text"></input></td><td><input type="text"></input></td></tr>';
+        '<tr id = "' + id + '">' +
+        '<td style="text-align: center;"><i id="delete" class="fa fa-trash fa-border"></i></td>' +
+        '<td><input type="text" placeholder="새로 추가된 아이템" style="width:100%;"></input></td>' +
+        '<td><input type="text" style="width:100%;"></input></td>' + 
+        '<td><input type="text" style="width:100%;"></input></td>' + 
+        '<td><input type="text" style="width:100%;"></input></td></tr>';
       $("#supTab > tbody:last").append(addTrText);
 
       id++;
     });
 
     //delete item
-    $(document).on("click", "#delete", function() {
+    $(document).on("click", "#delete", function () {
       var trHtml = $(this)
         .parent()
         .parent();
