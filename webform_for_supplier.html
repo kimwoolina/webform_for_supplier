@@ -261,7 +261,7 @@
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
   <script>
-    // enable toogle popover
+    //enable toogle popover
     $(function () {
       $('[data-toggle="popover"]').popover()
     })
@@ -272,7 +272,7 @@
     $(document).on("click", "#addBtn", function () {
       var addTrText =
       '<tr id = "'+ id + '">'+
-        '<td style="text-align: center;"><i class="fa fa-trash fa-border"></i></td>'+
+        '<td style="text-align: center;"><i id="delete" class="fa fa-trash fa-border"></i></td>'+
         '<td><input type="text" placeholder="새로 추가된 아이템" style="width:100%;"></input></td>'+
         '<td><input type="text"></input></td><td><input type="text"></input></td><td><input type="text"></input></td></tr>';
       $("#supTab > tbody:last").append(addTrText);
@@ -280,6 +280,14 @@
       id++;
     });
 
+    //delete item
+    $(document).on("click", "#delete", function() {
+      var trHtml = $(this)
+        .parent()
+        .parent();
+
+      trHtml.remove(); //delete tr tag
+    });
 
   </script>
 </body>
