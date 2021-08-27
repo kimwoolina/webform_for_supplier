@@ -12,21 +12,21 @@
         background-color: #f3f3f3;
     }
 
-    div{
+    div {
         text-align: center;
     }
 
     #divPosition {
-        box-shadow: 20px 20px 50px rgba(0,0,0,0.1); 
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.1);
         background-color: white;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         padding: 50px;
     }
 
-    button{
+    button {
         background-color: transparent;
         border: none;
         color: rgb(0, 162, 255);
@@ -37,24 +37,23 @@
         padding: 50px;
     }
 
-    input{
+    input {
         border: 0;
         outline: 0;
         background: transparent;
         border-bottom: 2px solid black;
         width: 80px;
-        text-align:center;
-        padding : 5px;
-        margin-left:10px;
+        text-align: center;
+        padding: 5px;
+        margin-left: 10px;
     }
 
     input::placeholder {
         color: rgb(175, 175, 175);
         font-weight: 600;
         font-style: italic;
-        font-size:  x-large;
-      }
-
+        font-size: x-large;
+    }
 </style>
 
 <body>
@@ -62,29 +61,47 @@
         <div style="text-align: center;"><label
                 style="font-size: 30px; font-weight: bold;margin: 0 auto 20px;color: #000000;line-height: 37px;font-family: Helvetica;">
                 Verify your email address</label>
-                <br><br>
-                <label
+            <br><br>
+            <label
                 style="color: #777B80;text-align: center !important;font-size: 19px;line-height: 28px;margin-bottom: 40px;padding: 0;font-family: Helvetica;">
                 We emailed you a four-digit code to invisionapp@ggg.vom.
                 <br> Enter the code below to confirm your email address.</label>
-                <br><br>
-            
+            <br><br>
+
             <div>
                 <!-- 인증번호 입력 (숫자만 입력 가능)-->
                 <div>
-                    <input class="inputs" placeholder="-" maxlength="1" size="1" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" autofocus required />
-                    <input class="inputs" placeholder="-" maxlength="1" size="1" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" required />
-                    <input class="inputs" placeholder="-" maxlength="1" size="1" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" required />
-                    <input class="inputs" placeholder="-" maxlength="1" size="1" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" required />
+                    <input class="inputs" placeholder="-" maxlength="1" size="1"
+                        onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" autofocus required />
+                    <input class="inputs" placeholder="-" maxlength="1" size="1"
+                        onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" required />
+                    <input class="inputs" placeholder="-" maxlength="1" size="1"
+                        onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" required />
+                    <input class="inputs" placeholder="-" maxlength="1" size="1"
+                        onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" required />
                     <br>
-                    
+
                     <!-- 전송 버튼 -->
                     <button type="button" onclick="myFunction()">Resend Code</button>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $(".inputs").keyup (function () {
+                var charLimit = $(this).attr("maxlength");
+                if (this.value.length >= charLimit) {
+                    $(this).next('.inputs').focus();
+                    return false;
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
