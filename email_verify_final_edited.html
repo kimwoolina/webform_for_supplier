@@ -92,8 +92,9 @@
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script>
-        $(function() {
-            $(".inputs").keyup (function () {
+        //auto focus on next text input
+        $(function () {
+            $(".inputs").keyup(function () {
                 var charLimit = $(this).attr("maxlength");
                 if (this.value.length >= charLimit) {
                     $(this).next('.inputs').focus();
