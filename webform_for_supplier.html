@@ -189,7 +189,7 @@
             <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom" data-content="상품명: '브랜드+상품명+상품군' + 용량/중량, 수량, 색상, 사이즈 등 관련 정보를 포함하여 기재. (해당 상품 참고링크: 해당상품을 정확하게 소통하고자 알려드리는 링크입니다.)"
               aria-hidden="true"></i>
           </th>
-          <th width="100"></th>
+          <th width="100"><i id="editAll" class="fa fa-pencil fa-border"></i></th>
           <th width="200">공급가
             <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom" data-content="공급가(부가세포함) : 공급사가 쿠팡에 판매하는 SKU 별 상품의 가격. (쿠팡이 공급사로부터 매입하는 가격)"
               aria-hidden="true"></i>
@@ -344,9 +344,7 @@
 
     //edit item
     $(document).on("click", "#edit", function() {
-      var trHtml = $(this)
-        .parent()
-        .parent();
+      var trHtml = $(this).parent().parent();
 
       var tdHtml = trHtml.children();
 
@@ -359,12 +357,82 @@
       var editable =
         '<td style="text-align: center;">' + idVal + '</td>' +
         '<td><input type="text" value="' + nameHtml + '" style="width:100%;"></td>' +
-        '<td><i id="edit" class="fa fa-pencil fa-border"></i></td>' + 
+        '<td><i id="save" class="fa fa-pencil fa-border"></i></td>' + 
         '<td><input type="text" value="' + supplyHtml + '" style="width:100%;"></td>' +
         '<td><input type="text" value="' + sellingHtml + '" style="width:100%;"></td>' +
         '<td><input type="text" value="' + vendorHtml + '" style="width:100%;"></td>';
       
       $(this).parent().parent().html(editable);
+    });
+
+    //save changes
+    $(document).on("click", "#save", function() {
+      var trHtml = $(this).parent().parent();
+
+      var tdHtml = trHtml.children();
+
+      var idStr = trHtml.attr('id');
+
+      var strName = tdHtml.eq(1).children().val();
+      var strSupply = tdHtml.eq(3).children().val();
+      var strSelling = tdHtml.eq(4).children().val();
+      var strVendor = tdHtml.eq(5).children().val();
+
+      var saveChange = 
+        '<td style="text-align:center;">'+ idStr +'</td>' +
+        '<td><a href="#">' + strName + '</a></td>' +
+        '<td><i id="edit" class="fa fa-pencil fa-border"></i></td>' +
+        '<td>' + strSupply + '</td>' +
+        '<td>' + strSelling + '</td>'+
+        '<td>' + strVendor + '</td>';
+
+        $(this).parent().parent().html(saveChange);
+    });
+
+    //edit all 일괄 수정
+    $(document).on("click", "#editAll", function() {
+      for (var i = 1; i < 12; i++) {
+        var tdHtml = $("#"+ i).children();
+
+        var nameHtml = tdHtml.eq(1).text();
+        var supplyHtml = tdHtml.eq(3).text();
+        var sellingHtml = tdHtml.eq(4).text();
+        var vendorHtml = tdHtml.eq(5).text();
+
+        var editable =
+          '<td style="text-align: center;">' + i + '</td>' +
+          '<td><input type="text" value="' + nameHtml + '" style="width:100%;"></td>' +
+          '<td><i id="save" class="fa fa-pencil fa-border"></i></td>' + 
+          '<td><input type="text" value="' + supplyHtml + '" style="width:100%;"></td>' +
+          '<td><input type="text" value="' + sellingHtml + '" style="width:100%;"></td>' +
+          '<td><input type="text" value="' + vendorHtml + '" style="width:100%;"></td>';
+        
+          $("#"+ i).html(editable);
+      }
+      $(this).attr('id','saveAll');
+    });
+
+    //save All
+    $(document).on("click", "#saveAll", function() {
+      for (var i = 1; i < 12; i++) {
+        var tdHtml = $("#"+ i).children();
+
+        var strName = tdHtml.eq(1).children().val();
+        var strSupply = tdHtml.eq(3).children().val();
+        var strSelling = tdHtml.eq(4).children().val();
+        var strVendor = tdHtml.eq(5).children().val();
+
+        var saveChange = 
+          '<td style="text-align:center;">'+ i +'</td>' +
+          '<td><a href="#">' + strName + '</a></td>' +
+          '<td><i id="edit" class="fa fa-pencil fa-border"></i></td>' +
+          '<td>' + strSupply + '</td>' +
+          '<td>' + strSelling + '</td>'+
+          '<td>' + strVendor + '</td>';
+
+          $("#"+ i).html(saveChange);
+      }
+      $(this).attr('id','editAll');
     });
 
     //delete item
