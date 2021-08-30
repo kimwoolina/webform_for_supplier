@@ -104,6 +104,10 @@
   /* modal */
 
   /* pop over */
+  i {
+    cursor: pointer;
+  }
+
   .popover {
     background-color: #22345e;
     border-color: #22345e;
@@ -185,6 +189,7 @@
             <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom" data-content="상품명: '브랜드+상품명+상품군' + 용량/중량, 수량, 색상, 사이즈 등 관련 정보를 포함하여 기재. (해당 상품 참고링크: 해당상품을 정확하게 소통하고자 알려드리는 링크입니다.)"
               aria-hidden="true"></i>
           </th>
+          <th width="100"></th>
           <th width="200">공급가
             <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom" data-content="공급가(부가세포함) : 공급사가 쿠팡에 판매하는 SKU 별 상품의 가격. (쿠팡이 공급사로부터 매입하는 가격)"
               aria-hidden="true"></i>
@@ -202,6 +207,7 @@
         <tr id="1">
           <td style="text-align: center;">1</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
+          <td><i class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -209,6 +215,7 @@
         <tr id="2">
           <td style="text-align: center;">2</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
+          <td><i class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -216,6 +223,7 @@
         <tr id="3">
           <td style="text-align: center;">3</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
+          <td><i class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -223,6 +231,7 @@
         <tr id="4">
           <td style="text-align: center;">4</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
+          <td><i class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -230,6 +239,7 @@
         <tr id="5">
           <td style="text-align: center;">5</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
+          <td><i class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -237,6 +247,7 @@
         <tr id="6">
           <td style="text-align: center;">6</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
+          <td><i class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -244,6 +255,7 @@
         <tr id="7">
           <td style="text-align: center;">7</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
+          <td><i class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -251,6 +263,7 @@
         <tr id="8">
           <td style="text-align: center;">8</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
+          <td><i class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -258,6 +271,7 @@
         <tr id="9">
           <td style="text-align: center;">9</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
+          <td><i class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -265,6 +279,7 @@
         <tr id="10">
           <td style="text-align: center;">10</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
+          <td><i class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -272,6 +287,7 @@
         <tr id="11">
           <td style="text-align: center;">11</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
+          <td><i class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -282,10 +298,10 @@
 
   <!-- fixed footer -->
   <div class="footer">
-    <button type="button" class="btn btn-outline-primary">cancle</button>&nbsp;
-    <button type="button" class="btn btn-outline-primary">submit</button>&nbsp;
-    <button type="button" class="btn btn-outline-primary">edit</button>&nbsp;
-    <button type="button" class="btn btn-outline-primary">save</button>
+    <button type="button" class="btn btn-outline-primary">Cancle</button>&nbsp;
+    <button type="button" class="btn btn-outline-primary">Submit</button>&nbsp;
+    <button type="button" class="btn btn-outline-primary">Edit</button>&nbsp;
+    <button type="button" class="btn btn-outline-primary">Save</button>
   </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -317,6 +333,7 @@
         '<tr id = "' + id + '">' +
         '<td style="text-align: center;"><i id="delete" class="fa fa-trash fa-border"></i></td>' +
         '<td><input type="text" placeholder="새로 추가된 아이템" style="width:100%;"></input></td>' +
+        '<td></td>' + 
         '<td><input type="text" style="width:100%;"></input></td>' + 
         '<td><input type="text" style="width:100%;"></input></td>' + 
         '<td><input type="text" style="width:100%;"></input></td></tr>';
