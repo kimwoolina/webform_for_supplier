@@ -11,7 +11,7 @@ $(function () {
 
     $(document).on("click", "#addBtn", function () {
         var addTrText =
-            '<tr class = "' + id + '">' +
+            '<tr>' +
             '<td style="text-align: center;"><i id="delete" class="fa fa-trash fa-border"></i></td>' +
             '<td><input type="text" placeholder="새로 추가된 아이템" style="width:100%;"></input></td>' +
             '<td></td>' +
@@ -24,43 +24,32 @@ $(function () {
     });
 
     //edit item
-    $(document).on("click", "#edit", function () {
-        var trHtml = $(this).parent().parent();
+    $(document).on("click", ".btn-edit", function () {
+        var trHtml = $(this).parents('tr');
+        if( trHtml.hasClass('edit-row')){
+            trHtml.find('input').removeAttr('disabled');
+            trHtml.find('.prd-name').removeClass('prd-name-none');
+            trHtml.removeClass('edit-row');
 
-        var tdHtml = trHtml.children();
-
-        var idVal = trHtml.attr('class');
-        
-        $("." + idVal + " " + ".editText").attr("readonly", false);
-
-        tdHtml.eq(2).html('<i id="save" class="fa fa-pencil fa-border"></i>');
-    });
-
-    //save changes
-    $(document).on("click", "#save", function () {
-        var trHtml = $(this).parent().parent();
-
-        var tdHtml = trHtml.children();
-
-        var idStr = trHtml.attr('class');
-
-        $("." + idStr + " " + ".editText").attr("readonly", true);
-
-        tdHtml.eq(2).html('<i id="edit" class="fa fa-pencil fa-border"></i>');
+        }else{
+            trHtml.find('input').attr('disabled',true);
+            trHtml.find('.prd-name').addClass('prd-name-none');
+            trHtml.addClass('edit-row');
+        }
     });
 
     //edit all 일괄 수정
     $(document).on("click", "#editAll", function () {
-        $(".editText").attr("readonly", false);
-
-        $(this).attr('id', 'saveAll');
-    });
-
-    //save All
-    $(document).on("click", "#saveAll", function () {
-        $(".editText").attr("readonly", true);
-
-        $(this).attr('id', 'editAll');
+        var trHtml = $('tr');
+        if(trHtml.hasClass('edit-row')){
+            trHtml.find('input').removeAttr('disabled');
+            trHtml.find('.prd-name').removeClass('prd-name-none');
+            trHtml.removeClass('edit-row');
+        }else{
+            trHtml.find('input').attr('disabled',true);
+            trHtml.find('.prd-name').addClass('prd-name-none');
+            trHtml.addClass('edit-row');
+        }
     });
 
     //delete item

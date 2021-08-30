@@ -90,7 +90,11 @@
       border: 1px solid #ccc;
     }
   }
-  /* modal */
+  /* table edit */
+  .prd-name-none{
+    border:0;
+    background: #fff;
+  }
 
   /* pop over */
   i {
