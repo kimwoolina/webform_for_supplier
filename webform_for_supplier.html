@@ -207,7 +207,7 @@
         <tr id="1">
           <td style="text-align: center;">1</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
-          <td><i class="fa fa-pencil fa-border"></i></td>
+          <td><i id="edit" class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -215,7 +215,7 @@
         <tr id="2">
           <td style="text-align: center;">2</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
-          <td><i class="fa fa-pencil fa-border"></i></td>
+          <td><i id="edit" class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -223,7 +223,7 @@
         <tr id="3">
           <td style="text-align: center;">3</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
-          <td><i class="fa fa-pencil fa-border"></i></td>
+          <td><i id="edit" class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -231,7 +231,7 @@
         <tr id="4">
           <td style="text-align: center;">4</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
-          <td><i class="fa fa-pencil fa-border"></i></td>
+          <td><i id="edit" class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -239,7 +239,7 @@
         <tr id="5">
           <td style="text-align: center;">5</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
-          <td><i class="fa fa-pencil fa-border"></i></td>
+          <td><i id="edit" class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -247,7 +247,7 @@
         <tr id="6">
           <td style="text-align: center;">6</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
-          <td><i class="fa fa-pencil fa-border"></i></td>
+          <td><i id="edit" class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -255,7 +255,7 @@
         <tr id="7">
           <td style="text-align: center;">7</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
-          <td><i class="fa fa-pencil fa-border"></i></td>
+          <td><i id="edit" class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -263,7 +263,7 @@
         <tr id="8">
           <td style="text-align: center;">8</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
-          <td><i class="fa fa-pencil fa-border"></i></td>
+          <td><i id="edit" class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -271,7 +271,7 @@
         <tr id="9">
           <td style="text-align: center;">9</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
-          <td><i class="fa fa-pencil fa-border"></i></td>
+          <td><i id="edit" class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -279,7 +279,7 @@
         <tr id="10">
           <td style="text-align: center;">10</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
-          <td><i class="fa fa-pencil fa-border"></i></td>
+          <td><i id="edit" class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -287,7 +287,7 @@
         <tr id="11">
           <td style="text-align: center;">11</td>
           <td><a href="#">아이리버 차량용 거치대</a></td>
-          <td><i class="fa fa-pencil fa-border"></i></td>
+          <td><i id="edit" class="fa fa-pencil fa-border"></i></td>
           <td>12,000</td>
           <td>15,000</td>
           <td>3P987654321</td>
@@ -340,6 +340,31 @@
       $("#supTab > tbody:last").append(addTrText);
 
       id++;
+    });
+
+    //edit item
+    $(document).on("click", "#edit", function() {
+      var trHtml = $(this)
+        .parent()
+        .parent();
+
+      var tdHtml = trHtml.children();
+
+      var idVal = trHtml.attr('id');
+      var nameHtml = tdHtml.eq(1).text();
+      var supplyHtml = tdHtml.eq(3).text();
+      var sellingHtml = tdHtml.eq(4).text();
+      var vendorHtml = tdHtml.eq(5).text();
+
+      var editable =
+        '<td style="text-align: center;">' + idVal + '</td>' +
+        '<td><input type="text" value="' + nameHtml + '" style="width:100%;"></td>' +
+        '<td><i id="edit" class="fa fa-pencil fa-border"></i></td>' + 
+        '<td><input type="text" value="' + supplyHtml + '" style="width:100%;"></td>' +
+        '<td><input type="text" value="' + sellingHtml + '" style="width:100%;"></td>' +
+        '<td><input type="text" value="' + vendorHtml + '" style="width:100%;"></td>';
+      
+      $(this).parent().parent().html(editable);
     });
 
     //delete item
