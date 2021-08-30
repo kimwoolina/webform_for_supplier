@@ -46,3 +46,21 @@ input::placeholder {
     font-style: italic;
     font-size: x-large;
 }
+
+.title {
+    font-size: 30px; 
+    font-weight: bold;
+    margin: 0 auto 20px;
+    color: #000000;
+    line-height: 37px;
+    font-family: Helvetica;
+}
+
+.context {
+    color: #777B80;
+    text-align: center !important;
+    font-size: 19px;line-height: 28px;
+    margin-bottom: 40px;
+    padding: 0;
+    font-family: Helvetica;
+}
