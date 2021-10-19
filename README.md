@@ -6,3 +6,4 @@ jira integration test
 <Checked> worked with branch, full request
 <Check needed> integrated with commit
 .
+ㅠㅠ test again
