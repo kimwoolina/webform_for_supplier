@@ -5,3 +5,4 @@ jira integration test
 2
 <Checked> worked with branch, full request
 <Check needed> integrated with commit
+.
